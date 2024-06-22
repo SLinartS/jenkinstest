@@ -2,15 +2,12 @@ properties([disableConcurrentBuilds()])
 
 pipeline {
     agent any
-    // agent {
-    //   label 'main'
-    // }
 
     options {
       timestamps()
     }
 
-    // triggers { pollSCM('* * * * *') }
+    triggers { pollSCM('* * * * *') }
 
     tools {
       nodejs 'node'
@@ -29,8 +26,7 @@ pipeline {
         }
         stage('Run') { 
             steps {
-                // sh 'node ./server.js'
-                sh 'echo end'
+                sh 'nohup node ./server.js &'
             }
         }
     }
