@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Run') { 
             steps {
-                sh 'nohup node ./server.js &'
+                sh 'node ./server.js at now'
             }
         }
     }
