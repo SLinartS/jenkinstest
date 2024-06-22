@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Run') { 
             steps {
-                sh 'node ./server.js | at now'
+                sh 'JENKINS_NODE_COOKIE=dontKillMe nohup node ./server.js &'
             }
         }
     }
