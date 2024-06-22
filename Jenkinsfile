@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Run') { 
             steps {
-                sh 'node ./server.js at now'
+                sh 'node ./server.js | at now'
             }
         }
     }
