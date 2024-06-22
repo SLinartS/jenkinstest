@@ -7,12 +7,11 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'npm install' 
-                sh 'npm run build'
             }
         }
         stage('Deliver') { 
             steps {
-                sh 'node ./server.js' 
+                sh 'npm run build'
             }
         }
     }
