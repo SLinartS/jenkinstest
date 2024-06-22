@@ -28,7 +28,8 @@ pipeline {
         }
         stage('Run') { 
             steps {
-                sh 'node ./server.js'
+                // sh 'node ./server.js'
+                sh 'echo end'
             }
         }
     }
