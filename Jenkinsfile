@@ -1,7 +1,19 @@
-pipeline {
-    agent any
+properties([disableConcurrentBuilds()])
 
-    tools {nodejs 'node'}
+pipeline {
+    agent {
+      label 'main'
+    }
+
+    options {
+      timestamps()
+    }
+
+    triggers { pollSCP('*****') }
+
+    tools {
+      nodejs 'node'
+    }
 
     stages {
         stage('Build') { 
