@@ -9,7 +9,7 @@ pipeline {
       timestamps()
     }
 
-    triggers { pollSCP('*****') }
+    triggers { pollSCM('*****') }
 
     tools {
       nodejs 'node'
