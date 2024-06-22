@@ -14,5 +14,10 @@ pipeline {
                 sh 'npm run build'
             }
         }
+        stage('Run') { 
+            steps {
+                sh 'node ./server.js'
+            }
+        }
     }
 }
