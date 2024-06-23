@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Run') { 
             steps {
-                sh 'npx kill-port 9000'
+                sh 'lsof -ti tcp:9000 | xargs kill'
                 sh 'nohup node ./server.js &'
             }
         }
