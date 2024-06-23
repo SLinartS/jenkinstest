@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Run') { 
             steps {
-                sh 'if lsof -ti tcp:9000 then lsof -ti tcp:9000 | xargs kill'
+                sh 'if lsof -ti tcp:9000; then lsof -ti tcp:9000 | xargs kill'
                 sh 'nohup node ./server.js &'
             }
         }
