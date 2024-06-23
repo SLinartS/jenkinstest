@@ -25,6 +25,7 @@ pipeline {
         }
         stage('Run') { 
             steps {
+                sh 'npx kill-port 9000'
                 sh 'node ./server.js'
             }
         }
