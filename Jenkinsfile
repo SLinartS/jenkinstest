@@ -1,10 +1,9 @@
-properties([disableConcurrentBuilds()])
-
 pipeline {
     agent any
 
     options {
       timestamps()
+      disableConcurrentBuilds(abortPrevious: true)
     }
 
     triggers { pollSCM('* * * * *') }
@@ -26,7 +25,7 @@ pipeline {
         }
         stage('Run') { 
             steps {
-                sh 'JENKINS_NODE_COOKIE=dontKillMe nohup node ./server.js &'
+                sh 'node ./server.js'
             }
         }
     }
